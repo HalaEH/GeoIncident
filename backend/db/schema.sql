@@ -1,0 +1,15 @@
+DROP TABLE IF EXISTS incident;
+
+CREATE TABLE incident (
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  title TEXT NOT NULL,
+  latitude REAL NOT NULL,
+  longitude REAL NOT NULL,
+  alert TEXT,
+  magnitude REAL,
+  description TEXT,
+  type TEXT,
+  state TEXT NOT NULL DEFAULT "created",
+  created TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  updated TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP
+);
