@@ -1,0 +1,35 @@
+/* Leaflet Map */
+.leaflet-container {
+    width: 100%;
+    height: 100%;
+    background: #f8fafc;
+  }
+  
+  .custom-marker {
+    background: none;
+    border: none;
+  }
+  
+  
+    
+    /* Custom scrollbar for incident list */
+    .list-group .list-group-item{
+      max-height: calc(100vh - 300px);
+      overflow-y: auto;
+      scrollbar-width: thin;
+      margin-bottom: 1rem;
+      scrollbar-color: rgba(0, 0, 0, 0.2) transparent;
+    }
+    
+    .list-group::-webkit-scrollbar {
+      width: 6px;
+    }
+    
+    .list-group::-webkit-scrollbar-track {
+      background: transparent;
+    }
+    
+    .list-group::-webkit-scrollbar-thumb {
+      background-color: rgba(0, 0, 0, 0.2);
+      border-radius: 3px;
+    }
