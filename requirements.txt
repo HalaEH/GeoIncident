@@ -2,4 +2,4 @@ click==8.1.8
 Flask==3.1.0
 Flask_Cors==5.0.0
 pytest==8.3.4
-statemachine==0.1
+python-statemachine==1.0.3
