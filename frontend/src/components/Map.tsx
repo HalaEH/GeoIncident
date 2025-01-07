@@ -46,22 +46,6 @@ const Map = ({ incidents, selectedIncident, zoom, handleIncidentClick }: MapProp
         }
       });
 
-      // Add new markers
-      // incidents.forEach(incident => {
-      //   const customIcon = L.divIcon({
-      //     className: 'custom-marker',
-      //     html: `<div style="
-      //       width: 16px;
-      //       height: 16px;
-      //       background-color: ${selectedIncident?.id === incident.id ? '#0d6efd' : '#dc3545'};
-      //       border-radius: 50%;
-      //       border: 2px solid white;
-      //       box-shadow: 0 0 4px rgba(0,0,0,0.2);
-      //     "></div>`,
-      //     iconSize: [8, 8],
-      //     iconAnchor: [8, 4]
-      //   });
-
       incidents.forEach(incident => {
         const customIcon = L.divIcon({
           className: 'custom-marker',
