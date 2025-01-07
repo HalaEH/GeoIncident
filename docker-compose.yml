@@ -1,0 +1,39 @@
+version: '3.8'
+
+services:
+  backend:
+    build:
+      context: .
+      dockerfile: backend/Dockerfile
+    ports:
+      - "5000:5000"
+    environment:
+      - FLASK_APP=backend
+      - FLASK_ENV=development
+      - PYTHONPATH=/app
+    volumes:
+      - ./backend:/app/backend
+    networks:
+      - app-network
+    command: flask --app backend run --debug --host=0.0.0.0
+
+  frontend:
+    build:
+      context: .
+      dockerfile: frontend/Dockerfile
+    ports:
+      - "5173:5173"
+    volumes:
+      - ./frontend:/app
+    depends_on:
+      - backend
+    environment:
+      VITE_BACKEND_URL: http://backend:5000
+      DOCKER_ENV: "true"
+    networks:
+      - app-network
+    command: npm run dev -- --host 0.0.0.0
+
+networks:
+  app-network:
+    driver: bridge
